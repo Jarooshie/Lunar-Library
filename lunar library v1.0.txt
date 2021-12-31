@@ -1053,4 +1053,5 @@ function library:Window(t)
     end
     return win
 end
+return library
 --local window = library:Window("Lunar Library")
