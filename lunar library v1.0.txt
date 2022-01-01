@@ -42,6 +42,8 @@ function library:Window(t)
     local Resizer = Instance.new("ImageButton")
     local UIListLayout = Instance.new("UIListLayout")
 
+    function onCls() end
+
     function win.setIcon(img)
         Icon.Image = "rbxassetid://"..tostring(img)
     end
@@ -51,6 +53,10 @@ function library:Window(t)
     function win.setSize(size)
         contents.Size = size
         TopBar.Size = UDim2.new(0,size.X.Offset,0,25)
+    end
+    function win:onClose(callback)
+        callback = typeof(callback) == "function" and callback or function()end
+        onCls = callback
     end
 
 
@@ -340,7 +346,9 @@ function library:Window(t)
     close.MouseLeave:Connect(function()
         Resize(close,{BackgroundTransparency = 1},0.3)
     end)
+    
     function cls()
+        onCls()
         Resizer:Destroy()
         Resize(contents,{Size = UDim2.new(0,contents.Size.X.Offset,0,25)},0.5)
         wait(0.5)
@@ -1058,3 +1066,4 @@ function library:Window(t)
     return win
 end
 return library
+--local window = library:Window("Lunar Library")
