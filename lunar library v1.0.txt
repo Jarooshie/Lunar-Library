@@ -23,7 +23,7 @@ local library = {}
 
 function library:Window(t)
     local win = {}
-
+ 
     local ScreenGui = Instance.new("ScreenGui")
     local contents = Instance.new("Frame")
     local TopBar = Instance.new("Frame")
