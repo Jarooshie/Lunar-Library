@@ -1,3 +1,5 @@
+-- Made by: Jarooshie#5081 --
+
 if game.CoreGui:FindFirstChild("_LunarLibrary") then
 	game.CoreGui["_LunarLibrary"]:Destroy()
 end
