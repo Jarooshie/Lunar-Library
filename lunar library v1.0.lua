@@ -1068,4 +1068,3 @@ function library:Window(t)
     return win
 end
 return library
---local window = library:Window("Lunar Library")
